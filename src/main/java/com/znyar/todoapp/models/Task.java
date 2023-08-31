@@ -23,7 +23,7 @@ public class Task {
     @Column(name = "description", columnDefinition = "text")
     private String description;
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private TaskStatus status;
     @Column(name = "dateofcreated")
     private LocalDateTime dateOfCreated;

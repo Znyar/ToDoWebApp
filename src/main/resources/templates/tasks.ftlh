@@ -20,7 +20,9 @@
                 <td><a href="task/${task.id}">${task.title}</a></td>
                 <td>${task.description}</td>
                 <td>${task.dateOfCreated.format(("dd-MM-yyyy HH:mm:ss"))}</td>
-                <td><a>${task.status.name()}</a></td>
+                <td><form action="task/edit/status/${task.id}" method="post">
+                        <input type="submit" value="${task.status}">
+                    </form></td>
                 <td><a href="task/delete/${task.id}">Delete</a></td>
             </tr>
         <#else>

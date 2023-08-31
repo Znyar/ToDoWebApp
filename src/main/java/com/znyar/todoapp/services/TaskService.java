@@ -41,4 +41,16 @@ public class TaskService {
         }
     }
 
+    public void updateStatus(long id) {
+        Task updatedTask = taskRepository.findById(id).orElse(null);
+        if (updatedTask != null ) {
+            switch (updatedTask.getStatus()) {
+                case ACTIVE -> updatedTask.setStatus(TaskStatus.FINISHED);
+                case FINISHED -> updatedTask.setStatus(TaskStatus.INACTIVE);
+                case INACTIVE -> updatedTask.setStatus(TaskStatus.ACTIVE);
+            }
+            taskRepository.save(updatedTask);
+        }
+    }
+
 }

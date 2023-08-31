@@ -44,10 +44,10 @@ public class TaskController {
         return "redirect:/";
     }
 
-    /*@RequestMapping("/task/edit/status/{id}")
-    public String updateStatus(@PathVariable("id") long id, Task task) {
-        taskService.updateStatus(id, task);
+    @PostMapping("/task/edit/status/{id}")
+    public String updateStatus(@PathVariable("id") long id) {
+        taskService.updateStatus(id);
         return "redirect:/";
-    }*/
+    }
 
 }
